@@ -54,6 +54,13 @@ public class VirtualBabyTest {
 		underTest.tick();
 		int result=underTest.getHungry();
 		assertEquals(11, result);
+
+	}
+	
+	@Test
+	public void printMenu() {
+		VirtualBaby underTest= new VirtualBaby();
+		underTest.menu();
 		
 	}
 }
