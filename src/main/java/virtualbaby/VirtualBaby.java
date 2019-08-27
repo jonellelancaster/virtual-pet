@@ -5,6 +5,7 @@ public class VirtualBaby {
 	private int hungry = 10;
 	private int tired = 10;
 	private int diaper = 10;
+	
 
 	public int getHungry() {
 		return hungry;
@@ -19,7 +20,6 @@ public class VirtualBaby {
 		return diaper;
 
 	}
-
 	public void feed() {
 		hungry -= 5;
 		System.out.println("Baby is eating");
@@ -42,8 +42,16 @@ public class VirtualBaby {
 	}
 	public void menu() {
 		System.out.println("What would you like to do with your Virtual Baby? \n 1. Find out current state of baby. \n 2. Feed Baby. \n 3. Put baby down to sleep.\n 4. Change baby's diaper. ");
+	}
+	
+	public void healthStatusMenu() {
+		System.out.println("Hungry: " + hungry + "\nTired: "+ tired + "\nDiaper: "+ diaper+ "\n ");
 		
 		
+	}
+
+	public void declareDeath() {
+		System.out.println("You killed your baby. You are a terrible person.");
 		
 	}
 }

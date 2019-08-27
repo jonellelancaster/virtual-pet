@@ -17,8 +17,10 @@ public class VirtualBabyApp {
 
 		int menuSelect = input.nextInt();
 		
+	// for loop--how would i do this OR should i use a DOWHILE loop-- do tick() while baby is alive.
+
 		if(menuSelect==1) {
-			System.out.println("Hungry: " + virtualBaby.getHungry() + " \nTired: " + virtualBaby.getTired()+ " \nSoiled Diaper: "+ virtualBaby.getDiaper());
+			virtualBaby.healthStatusMenu();
 		} else if (menuSelect==2) {
 			virtualBaby.feed();
 		}else if (menuSelect==3) {
@@ -28,10 +30,8 @@ public class VirtualBabyApp {
 		} else {
 			System.out.println("Incorrect Choice");
 			virtualBaby.menu();
-		
+		}
 	}
-		virtualBaby.tick();
-		virtualBaby.menu();
 		
 		 menuSelect = input.nextInt();
 	}
