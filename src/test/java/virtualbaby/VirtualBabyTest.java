@@ -12,14 +12,14 @@ public class VirtualBabyTest {
 	public void  getHungry() {
 		VirtualBaby underTest = new VirtualBaby();
 		int result=underTest.getHungry();
-		assertEquals(10,result);
+		assertEquals(50,result);
 	}
 	@Test
 	public void getTired() {
 		
 		VirtualBaby underTest = new VirtualBaby();
-		int result=underTest.getTired();
-		assertEquals(10,result);
+		int result=underTest.getEnergy();
+		assertEquals(50,result);
 				
 	}
 	
@@ -27,37 +27,42 @@ public class VirtualBabyTest {
 	public void getDiaper() {
 		VirtualBaby underTest = new VirtualBaby();
 		int result=underTest.getDiaper();
-		assertEquals(10,result);
+		assertEquals(50,result);
 	
 		
 	}
 	@Test
-	public void hungerDecreaseby5() {
+	public void hungerIncreaseby10() {
 		VirtualBaby underTest = new VirtualBaby();
 		underTest.feed();
 		int result = underTest.getHungry();
-		assertEquals(5,result);
+		assertEquals(60,result);
 		
 	}
 	@Test
-	public void tiredDecreasedby5() {
+	public void energyIncreasedby10() {
 		VirtualBaby underTest = new VirtualBaby();
 		underTest.sleep();
-		int result= underTest.getTired();
-		assertEquals(5,result);
+		int result= underTest.getEnergy();
+		assertEquals(60,result);
 		
 	}
 	
 	@Test 
-	public void hungerIncreaseby1() {
+	public void hungerDecreasedby2() {
 		VirtualBaby underTest = new VirtualBaby();
 		underTest.tick();
 		int result=underTest.getHungry();
-		assertEquals(11, result);
+		assertEquals(48, result);
 
 	
-		
-		
+	}
+	@Test
+	public void getOverAllHealth() {
+		VirtualBaby underTest = new VirtualBaby();
+		underTest.getOverAllHealth();
+		int result=underTest.getOverAllHealth();
+		assertEquals(150,result);
 	}
 }
 	
