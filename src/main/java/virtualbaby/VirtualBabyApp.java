@@ -4,84 +4,98 @@ import java.util.Scanner;
 
 public class VirtualBabyApp {
 
+	private static VirtualBaby virtualBaby = new VirtualBaby();
+
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
 
-		VirtualBaby virtualBaby = new VirtualBaby();
-
 		System.out.println(
 				"Hello! Welcome to Virtual Baby. \nIf any of your health status drop to 0, you will kill your baby. Good luck and don't kill your baby.\n ");
 
-		virtualBaby.menu();
+		printMenu();
 
-		int run = 0;
-
-		for (run = 0; run <= 100; run++) {
+		while (true) {
 			int menuSelect = input.nextInt();
 
 			if (menuSelect == 1) {
-				virtualBaby.healthStatusMenu();
-				virtualBaby.menu();
+				healthStatusMenu();
+				printMenu();
 				virtualBaby.tick();
-				run++;
 
 			} else if (menuSelect == 2) {
 				virtualBaby.feed();
-				virtualBaby.menu();
+				printMenu();
 				virtualBaby.tick();
-				virtualBaby.healthStatusMenu();
-				run++;
+				healthStatusMenu();
+
 			} else if (menuSelect == 3) {
 				virtualBaby.sleep();
-				virtualBaby.menu();
+				printMenu();
 				virtualBaby.tick();
-				virtualBaby.healthStatusMenu();
-				run++;
+				healthStatusMenu();
+
 			} else if (menuSelect == 4) {
 				virtualBaby.changeDiaper();
-				virtualBaby.menu();
+				printMenu();
 				virtualBaby.tick();
-				virtualBaby.healthStatusMenu();
-				run++;
+				healthStatusMenu();
+
 			} else if (menuSelect == 5) {
 				virtualBaby.giveTeether();
-				virtualBaby.menu();
+				printMenu();
 				virtualBaby.tick();
-				virtualBaby.healthStatusMenu();
-				run++;
+				healthStatusMenu();
+
 			} else if (menuSelect == 6) {
 				virtualBaby.playWithBaby();
-				virtualBaby.menu();
+				printMenu();
 				virtualBaby.tick();
-				virtualBaby.healthStatusMenu();
-				run++;
-			} else if (menuSelect==7) {
+				healthStatusMenu();
+
+			} else if (menuSelect == 7) {
 				virtualBaby.drinkWine();
-				virtualBaby.menu();
+				printMenu();
 				virtualBaby.tick();
-				virtualBaby.healthStatusMenu();
-				run++;
+				healthStatusMenu();
+
 			} else {
 				System.out.println("Incorrect Choice");
-				virtualBaby.menu();
+				printMenu();
 				virtualBaby.tick();
-				run++;
+
 			}
 
-			if ((virtualBaby.getHungry() <= 0) ||(virtualBaby.getEnergy() <= 0)||(virtualBaby.getDiaper() <= 0)||(virtualBaby.getTeething() <= 0)||(virtualBaby.getPlayTime()<= 0)){
-				
+			if ((virtualBaby.getHungry() <= 0) || (virtualBaby.getEnergy() <= 0) || (virtualBaby.getDiaper() <= 0)
+					|| (virtualBaby.getTeething() <= 0) || (virtualBaby.getPlayTime() <= 0)) {
+
 				virtualBaby.declareDeath();
-			} else if ((virtualBaby.getHungry() <= 25) &&(virtualBaby.getEnergy() <= 25)&&(virtualBaby.getDiaper() <= 25)&&(virtualBaby.getTeething() <= 25)&&(virtualBaby.getPlayTime()<= 25)) {
+				System.exit(0);
+			} else if ((virtualBaby.getHungry() <= 25) && (virtualBaby.getEnergy() <= 25)
+					&& (virtualBaby.getDiaper() <= 25) && (virtualBaby.getTeething() <= 25)
+					&& (virtualBaby.getPlayTime() <= 25)) {
 				System.out.println("Baby is only half alive. Do you only want a half child?");
-			}else if (virtualBaby.getParentMentalState() <= 25) {
-				System.out.println("Your mental health is declining. Drinks some wine! You need some me time....or at least something to numb you.");
+			} else if (virtualBaby.getParentMentalState() <= 25) {
+				System.out.println(
+						"Your mental health is declining. Drinks some wine! You need some me time....or at least something to numb you.");
 			} else {
 				System.out.println("You are doing good at this parenting thing.");
 			}
 
 		}
-		System.exit(0);
 
 	}
+
+	public static void printMenu() {
+		System.out.println(
+				"\nWhat would you like to do with your Virtual Baby? \n 1. Find out current state of baby. \n 2. Feed baby. \n 3. Put baby down to sleep.\n 4. Change baby's diaper. \n 5. Give baby a teether. \n 6. Play with baby. \n 7. Drink Wine ");
+	}
+
+	public static void healthStatusMenu() {
+		System.out.println("Hungry: " + virtualBaby.getHungry() + "\nEnergy Level: " + virtualBaby.getEnergy()
+				+ "\nDiaper: " + virtualBaby.getDiaper() + "\nTeething:" + virtualBaby.getTeething() + "\nPlay:"
+				+ virtualBaby.getPlayTime() + "\nParent Mental State:" + virtualBaby.getParentMentalState() + "\n ");
+
+	}
+
 }

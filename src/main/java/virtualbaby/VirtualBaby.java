@@ -90,11 +90,7 @@ public class VirtualBaby {
 		parentMentalState += 10;
 	}
 
-	public void menu() {
-		System.out.println(
-				"\nWhat would you like to do with your Virtual Baby? \n 1. Find out current state of baby. \n 2. Feed baby. \n 3. Put baby down to sleep.\n 4. Change baby's diaper. \n 5. Give baby a teether. \n 6. Play with baby. \n 7. Drink Wine ");
-	}
-
+	
 	public void healthStatusMenu() {
 		System.out.println("Hungry: " + hungry + "\nEnergy Level: " + energy + "\nDiaper: " + diaper + "\nTeething:" + teething + "\nPlay:" + playTime + "\nParent Mental State:" + parentMentalState+ "\n ");
 
