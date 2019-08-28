@@ -57,13 +57,10 @@ public class VirtualBabyTest {
 
 	
 	}
-	@Test
-	public void getOverAllHealth() {
-		VirtualBaby underTest = new VirtualBaby();
-		underTest.getOverAllHealth();
-		int result=underTest.getOverAllHealth();
-		assertEquals(150,result);
-	}
+
+	
+	
+	
 }
 	
 	
