@@ -14,6 +14,8 @@ public class VirtualBabyApp {
 				"Hello! Welcome to Virtual Baby. \nIf any of your health status drop to 0, you will kill your baby. Good luck and don't kill your baby.\n ");
 
 		printMenu();
+		
+		
 
 		while (true) {
 			int menuSelect = input.nextInt();

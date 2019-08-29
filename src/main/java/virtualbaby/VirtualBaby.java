@@ -91,10 +91,7 @@ public class VirtualBaby {
 	}
 
 	
-	public void healthStatusMenu() {
-		System.out.println("Hungry: " + hungry + "\nEnergy Level: " + energy + "\nDiaper: " + diaper + "\nTeething:" + teething + "\nPlay:" + playTime + "\nParent Mental State:" + parentMentalState+ "\n ");
-
-	} 
+	
 
 	public void declareDeath() {
 		System.out.println("You killed your baby. You are a terrible person.");
